@@ -6,6 +6,7 @@ export const tools = pgTable("tools", {
   name: text("name").notNull(),
   description: text("description").notNull(),
   icon: text("icon").notNull(),
+  category: text("category").notNull(), 
   created_at: timestamp("created_at").defaultNow().notNull(),
   updated_at: timestamp("updated_at").defaultNow().notNull(),
 });

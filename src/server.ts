@@ -1,5 +1,9 @@
 import { createServer } from "http";
 import app from "./app";
+import express from "express";
+
+app.use(express.json());
+
 
 const PORT = process.env.PORT || 5000;
 
