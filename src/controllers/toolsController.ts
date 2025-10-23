@@ -5,12 +5,12 @@ export const toolsController = {
   // 🧩 CREATE
   create: async (req: Request, res: Response) => {
     try {
-      const { name, description, icon, category } = req.body;
+      const { name, description, icon, category, url } = req.body;
 
-      if (!name || !description || !icon || !category) {
+      if (!name || !description || !icon || !category || !url) {
         return res.status(400).json({
           success: false,
-          message: "Missing required fields (name, description, icon, category).",
+          message: "Missing required fields (name, description, icon, category, url).",
         });
       }
 
