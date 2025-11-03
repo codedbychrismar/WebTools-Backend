@@ -10,7 +10,7 @@ export const authController = {
             res.status(201).json({
                 success: true,
                 message: "User signed up successfully.",
-                data: newUser,
+                user: newUser,
             });
         }catch (error) {
             console.error(error);
