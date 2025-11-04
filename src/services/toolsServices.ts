@@ -14,6 +14,10 @@ export const toolsService = {
     return await db.select().from(tools);
   },
 
+  getSomeTools: async () => {
+    return await db.select().from(tools).limit(10);
+  },
+
   // 🔍 GET BY ID
   getToolById: async (toolId: string) => {
     const result = await db

@@ -26,10 +26,23 @@ export const toolsController = {
     }
   },
 
-  // 🧰 GET ALL
   getAll: async (_req: Request, res: Response) => {
     try {
       const tools = await toolsService.getAllTools();
+      res.status(200).json({
+        success: true,
+        message: tools.length > 0 ? "Tools fetched successfully." : "No tools found.",
+        data: tools,
+      });
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ success: false, message: "Failed to fetch tools." });
+    }
+  },
+
+    getSome: async (_req: Request, res: Response) => {
+    try {
+      const tools = await toolsService.getSomeTools();
       res.status(200).json({
         success: true,
         message: tools.length > 0 ? "Tools fetched successfully." : "No tools found.",

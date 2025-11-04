@@ -5,6 +5,7 @@ const router = express.Router();
 
 router.post("/", toolsController.create);
 router.get("/", toolsController.getAll);
+router.get("/tools-overview", toolsController.getSome);
 router.get("/categories", toolsController.getCategories); 
 router.get("/:id", toolsController.getById);
 router.put("/:id", toolsController.update);
